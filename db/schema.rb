@@ -15,24 +15,6 @@ ActiveRecord::Schema.define(version: 2021_11_22_200030) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "houses", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "source", null: false
-    t.string "author", null: false
-    t.string "motto"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "members", force: :cascade do |t|
-    t.string "first_name", null: false
-    t.string "last_name", null: false
-    t.bigint "house_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["house_id"], name: "index_members_on_house_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
