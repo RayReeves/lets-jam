@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Permanent+Marker&family=Quattrocento+Sans&display=swap');
+
+body {
+  background-color: rgb(196, 62, 88);
+}
+
+.nav-bar {
+  height: 3em;
+  background-color: rgb(213, 213, 213);
+}
+
+.jammin {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.top-bar-left {
+  font-size: 2em;
+  padding: 7px;
+}
+
+.top-bar-right {
+  padding-top: 10px;
+  align-content: flex-end;
+}
+
+.nav-text {
+  padding: 7px;
+  background-color: rgb(255, 255, 255);
+  border: solid 3px rgb(106, 106, 215);
+  border-radius: 25px;
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-size: 1.2em;
+}
+
+
