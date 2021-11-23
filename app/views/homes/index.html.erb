@@ -10,9 +10,12 @@
         <p class="lets-jam introduction">"Let's Jam some time!"</p>
         <p class="introduction">Let's Jam is the place for you. We are here to help musicians find musicians - Let's Jam and get the music flowing again!<p>
       </div>
-      <p class="sign-up"><span class="register-button"><%= link_to "Sign Up", new_user_registration_path %></span></p>
+      <% if current_user %>
+        <p class="sign-up"><span class="register-button"><%= link_to "Take Me Home", users_path %></span></p>
+      <% else %>
+        <p class="sign-up"><span class="register-button"><%= link_to "Sign Up", new_user_registration_path %></span></p>
+      <% end %>
     </div>
-
     <div class="cell small-1 large-3">
     </div>
   </div>
