@@ -10,4 +10,21 @@ class Api::V1::UsersController < ApplicationController
   def show
     render json: User.all
   end
+
+  def update
+    binding.pry
+    @user = current_user
+
+    if @user.update(user_params)
+      render json: current_user
+      redirect_to root_path
+    end
+  end
+
+  private
+
+  def user_params
+    params[:user].permit(:first_name, :last_name, :bio, :zip_code, :instruments, :id, :username)
+  end
+
 end
