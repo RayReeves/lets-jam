@@ -26,7 +26,7 @@ const UserIndex = (props) => {
   return (
     <div>
       <h1>Welcome {user.first_name}</h1>
-      <div className="grid-x">
+      <div className="grid-x ">
         <div className="cell small-3 large-3 overview">
           {userOverview}
         </div>
@@ -35,7 +35,6 @@ const UserIndex = (props) => {
         </div>
         <div className="cell small-1 large-2">
         </div>
-        
       </div>
     </div>
   )

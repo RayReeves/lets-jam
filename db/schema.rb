@@ -22,12 +22,12 @@ ActiveRecord::Schema.define(version: 2021_11_22_235551) do
   end
 
   create_table "skills", force: :cascade do |t|
-    t.bigint "users_id", null: false
-    t.bigint "instruments_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "instrument_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["instruments_id"], name: "index_skills_on_instruments_id"
-    t.index ["users_id"], name: "index_skills_on_users_id"
+    t.index ["instrument_id"], name: "index_skills_on_instrument_id"
+    t.index ["user_id"], name: "index_skills_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
