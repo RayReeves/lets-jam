@@ -5,7 +5,7 @@ body {
 }
 
 .nav-bar {
-  height: 3em;
+  height: 3.5em;
   background-color: rgb(213, 213, 213);
 }
 
@@ -19,8 +19,7 @@ body {
 }
 
 .top-bar-right {
-  padding-top: 10px;
-  align-content: flex-end;
+  display: flex;
 }
 
 .nav-text {
@@ -30,6 +29,8 @@ body {
   border-radius: 25px;
   font-family: 'Quattrocento Sans', sans-serif;
   font-size: 1.2em;
+  display: block;
+  margin: auto;
 }
 
 

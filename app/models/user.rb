@@ -6,6 +6,9 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :zip_code, presence: true
 
+  has_many :skills
+  has_many :instruments, through: :skills
+
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
