@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   root "homes#index"
 
-  get "/users/editprofile", to: "users#index"
-  
+  get '/users' =>"users#index", :as => :user_root
+    
   namespace :api do
     namespace :v1 do
       resources :instruments, only: [:index]
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end 
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :edit, :update]
   resources :instruments, only: [:index, :show]
 
 end

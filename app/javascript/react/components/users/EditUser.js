@@ -11,17 +11,16 @@ const EditUserDetails = (props) => {
     })
   }, [])
 
-  const editUserDetails = async (formPayload) => {
+  const editUserDetails = async(event) => {
     try {
-      debugger
       const response = await fetch(`/api/v1/users/${user.id}`, {
-        method: "PATCH",
+        method: "PUT",
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
         credentials: "same-origin",
-        body: JSON.stringify(formPayload)
+        body: JSON.stringify(event)
       })
       console.log(response)
       debugger
@@ -41,7 +40,8 @@ const EditUserDetails = (props) => {
       <h1>Testing</h1>
       <div>
       <UserEditFormContainer 
-        editUserDetails={editUserDetails} 
+        editUserDetails={editUserDetails}
+        user={user} 
       />
     </div>
 
