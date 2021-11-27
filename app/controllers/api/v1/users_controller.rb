@@ -16,8 +16,7 @@ class Api::V1::UsersController < ApplicationController
     @user = current_user
 
     if @user.update(user_params)
-      render json: current_user
-      redirect_to root_path
+      render json: current_user, status: 200
     end
   end
 

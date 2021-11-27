@@ -1,0 +1,40 @@
+<h1>Personalize Your Profile</h1>
+<div class="grid-x align-center">
+  <div class="cell small-10 large-8">
+    <div class="grid-x align-center">
+      <div class="cell small-9 large-8">
+        <%= form_for (@user) do |f| %>
+          <div>
+            <%= f.label :username %>
+            <%= f.text_field :username %>
+          </div>
+          <div>
+            <%= f.label :first_name, "First Name" %>
+            <%= f.text_field :first_name %>
+          </div>
+          <div>
+            <%= f.label :last_name, "Last Name" %>
+            <%= f.text_field :last_name %>
+          </div>
+          <div>
+            <% Instrument.all.each do |instrument| %>
+              <%= check_box_tag "user[instrument_ids][]", instrument.id, f.object.instruments.include?(instrument)%>
+              <%= instrument.musical_instrument %>
+            <% end %>
+          </div>
+          <div>
+            <%= f.label :bio, "Biography" %>
+            <%= f.text_area :bio %>
+          </div>
+          <div>
+            <%= f.label :zip_code, "Zip Code" %>
+            <%= f.text_field :zip_code %>
+          </div>
+          <div class="actions">
+            <%= f.submit "Submit Changes", class: "signup-button" %>
+          </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

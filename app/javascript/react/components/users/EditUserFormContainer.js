@@ -3,15 +3,16 @@ import { Redirect } from "react-router";
 import helperFetch from "../helpers/Fetcher";
 
 const UserEditFormContainer = (props) => {
-  const [formData, setFormData] = useState({})
+  const [instruments, setInstruments] = useState({})
+  const [formData, setFormData] = useState(props.user)
   const [shouldRedirect, setShouldRedirect] = useState(false)
   
   useEffect(() => {
-    helperFetch(`/api/v1/users`).then(userData => {
-      setFormData(userData.user)
+    helperFetch(`/api/v1/instruments`).then(userData => {
+      setInstruments(instruments.instrument)
     })
   }, [])
-
+  
   const handleChange = event => {
     event.preventDefault()
     setFormData({

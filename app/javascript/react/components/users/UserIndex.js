@@ -22,6 +22,7 @@ const UserIndex = (props) => {
       user={user}/>
   )
   
+  let editElement = <span><a className="edit-button" href={`/users/${user.id}/edit`}>Personalize Your Profile</a></span>
   
   return (
     <div>
@@ -34,6 +35,7 @@ const UserIndex = (props) => {
           {userDetails}
         </div>
         <div className="cell small-1 large-2">
+          {editElement}
         </div>
       </div>
     </div>
