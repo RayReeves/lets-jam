@@ -2,6 +2,7 @@ import React, { useState, useEffect} from "react";
 import helperFetch from "../helpers/Fetcher";
 import UserOverview from "./UserOverview";
 import UserDetails from "./UserDetails";
+import UserSearch from "./UserSearch";
 
 const UserIndex = (props) => {
   const [user, setUser] = useState({})
@@ -19,10 +20,16 @@ const UserIndex = (props) => {
 
   const userDetails = (
     <UserDetails
-      user={user}/>
+      bio={user.bio}
+      instruments={user.instruments}/>
   )
   
   let editElement = <span><a className="edit-button" href={`/users/${user.id}/edit`}>Personalize Your Profile</a></span>
+
+  const userSearch = (
+    <UserSearch
+      user={user}/>
+  )
   
   return (
     <div>
@@ -35,7 +42,8 @@ const UserIndex = (props) => {
           {userDetails}
         </div>
         <div className="cell small-1 large-2">
-          {editElement}
+          <span><a className="edit-button" href={`/users/${user.id}/edit`}>Personalize Your Profile</a></span>
+          {userSearch}
         </div>
       </div>
     </div>
