@@ -16,16 +16,13 @@ const UserIndex = (props) => {
 
   const userOverview = (
     <UserOverview
-        user={user}/>
+      user={user}
+    />
   )
 
   const userDetails = (
     <UserDetails
       user={user}/>
-  )
-
-  const currentUser = (
-    <UserSearch currentUser={user} />
   )
   
   let editElement = <span><a className="edit-button" href={`/users/${user.id}/edit`}>Personalize Your Profile</a></span>
