@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Instrument.all.delete_all
+
+User.create(email: "admin@lets-jam.com", password: "adminPasswordHere", username: "Justin", first_name: "Justin", last_name: "Reeves", zip_code: "02155")
+
 Instrument.create(musical_instrument: "voice")
 Instrument.create(musical_instrument: "guitar")
 Instrument.create(musical_instrument: "bass")
