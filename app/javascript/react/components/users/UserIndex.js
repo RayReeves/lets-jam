@@ -1,8 +1,8 @@
 import React, { useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 import helperFetch from "../helpers/Fetcher";
 import UserOverview from "./UserOverview";
 import UserDetails from "./UserDetails";
-import UserSearch from "./UserSearch";
 
 const UserIndex = (props) => {
   const [user, setUser] = useState({})
@@ -20,16 +20,10 @@ const UserIndex = (props) => {
 
   const userDetails = (
     <UserDetails
-      bio={user.bio}
-      instruments={user.instruments}/>
+      user={user}/>
   )
   
   let editElement = <span><a className="edit-button" href={`/users/${user.id}/edit`}>Personalize Your Profile</a></span>
-
-  const userSearch = (
-    <UserSearch
-      user={user}/>
-  )
   
   return (
     <div>
@@ -42,8 +36,12 @@ const UserIndex = (props) => {
           {userDetails}
         </div>
         <div className="cell small-1 large-2">
-          <span><a className="edit-button" href={`/users/${user.id}/edit`}>Personalize Your Profile</a></span>
-          {userSearch}
+          <div><a className="edit-button" href={`/users/${user.id}/edit`}>Personalize Your Profile</a></div>
+          <div>
+            <Link to={"/users/search"}>
+              Find Fellow Musicians
+            </Link>
+          </div>
         </div>
       </div>
     </div>
