@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import helperFetch from "../helpers/Fetcher";
 import InstrumentCheck from "./InstrumentCheck";
+import ResultsTile from "./ResultsTile";
 
 const UserSearch = (props) => {
   const [instruments, setInstruments] = useState([])
   const [selectedCheckboxes, setSelectedCheckboxes] = useState([])
-  const [users, setUsers] = useState([])
+  const [filteredResults, setFilteredResults] = useState([])
 
   useEffect(() => {
     helperFetch(`/api/v1/instruments`).then(instrumentsData => {
@@ -36,36 +37,52 @@ const UserSearch = (props) => {
     }
   )
 
+  const resultsTiles = filteredResults.map((result) => {
+    return(
+      <ResultsTile key={result.id}
+        result={result}
+      />
+    )
+  }
+  )
+
   const handleSubmit = (event) => {
     event.preventDefault()
-    setUsers([])
     let filteredUsers = []
     instruments.forEach((instrument) => {
       if (selectedCheckboxes.includes(instrument.musical_instrument)) {
         instrument.users.forEach((user) => {
-          if (!filteredUsers.includes(user)) {
+          if (!filteredUsers.includes(user.id)) {
             filteredUsers.push(user)
           }
         })
       }
     })
-    setUsers(filteredUsers)
-    debugger
+    const uniqueUsers = Array.from(new Set(filteredUsers.map(a => a.id)))
+      .map(id => {
+        return filteredUsers.find(a => a.id === id)
+      })
+    setFilteredResults(uniqueUsers)
   }
 
   return (
-    <div className="search">
-      <form onSubmit={handleSubmit} >
-        <div className="searchInputs">
-          <div className="grid-x">
-            {instrumentCheckBoxes}
+    <div>
+      <div className="search">
+        <form onSubmit={handleSubmit} >
+          <div className="searchInputs">
+            <div className="grid-x">
+              {instrumentCheckBoxes}
+            </div>
           </div>
-        </div>
-        <input
-          class="search-button"
-          type="submit"
-        />
-      </form>
+          <input
+            className="search-button"
+            type="submit"
+          />
+        </form>
+      </div>
+      <div>
+        {resultsTiles}
+      </div>
     </div>
   )
 }

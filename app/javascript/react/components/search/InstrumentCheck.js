@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 
 const InstrumentCheck = (props) => {
-  const [checked, setChecked] = useState(false)
   const {instrument} = props
   
   return (

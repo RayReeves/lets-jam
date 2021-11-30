@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root "homes#index"
 
   get '/users' =>"users#index", :as => :user_root
+  get '/search' =>"users#index"
     
   namespace :api do
     namespace :v1 do
