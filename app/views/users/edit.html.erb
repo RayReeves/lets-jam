@@ -17,6 +17,7 @@
             <%= f.text_field :last_name %>
           </div>
           <div>
+            <%= f.label :instruments, "Instruments"%>
             <% Instrument.all.each do |instrument| %>
               <%= check_box_tag "user[instrument_ids][]", instrument.id, f.object.instruments.include?(instrument)%>
               <%= instrument.musical_instrument %>
@@ -29,6 +30,10 @@
           <div>
             <%= f.label :zip_code, "Zip Code" %>
             <%= f.text_field :zip_code %>
+          </div>
+          <div>
+            <p>Upload A Profile Photo</p>
+            <%= f.file_field :profile_photo %>
           </div>
           <div class="actions">
             <%= f.submit "Submit Changes", class: "signup-button" %>

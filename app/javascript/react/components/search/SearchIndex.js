@@ -46,9 +46,11 @@ const UserSearch = (props) => {
 
   const resultsTiles = filteredResults.map((result) => {
     return(
+      <div class="cell small-12 large-3 results-tile">
       <ResultsTile key={result.id}
         result={result}
       />
+      </div>
     )
   }
   )
@@ -88,7 +90,7 @@ const UserSearch = (props) => {
             />
           </form>
         </div>
-        <div>
+        <div class="grid-x">
           {resultsTiles}
         </div>
     </div>

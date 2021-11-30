@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :skills
   has_many :instruments, through: :skills
 
+  mount_uploader :profile_photo, ProfilePhotoUploader
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
