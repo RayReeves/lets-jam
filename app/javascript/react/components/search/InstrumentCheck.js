@@ -4,13 +4,12 @@ const InstrumentCheck = (props) => {
   const {instrument} = props
   
   return (
-    <label>
+    <label className="checkbox">
       {`${instrument.musical_instrument} `}
       <input 
         onChange={props.handleCheckboxChange}
         name={instrument.musical_instrument}
         type="checkbox"
-        value={instrument}
       />
     </label>
   )

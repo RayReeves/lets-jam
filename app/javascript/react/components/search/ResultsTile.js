@@ -6,7 +6,7 @@ const ResultsTile = (props) => {
   
   return (
     <div>
-      {result.username}
+      {`${result.username} `}
     </div>
   )
 }
