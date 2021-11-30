@@ -38,7 +38,7 @@ const UserIndex = (props) => {
         <div className="cell small-1 large-2">
           <div><a className="edit-button" href={`/users/${user.id}/edit`}>Personalize Your Profile</a></div>
           <div>
-            <Link to={"/users/search"}>
+            <Link to={"/search"}>
               Find Fellow Musicians
             </Link>
           </div>
