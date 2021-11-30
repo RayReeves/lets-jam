@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import helperFetch from "../helpers/Fetcher";
 import UserOverview from "./UserOverview";
 import UserDetails from "./UserDetails";
+import UserSearch from "../search/SearchIndex";
 
 const UserIndex = (props) => {
   const [user, setUser] = useState({})
@@ -21,6 +22,10 @@ const UserIndex = (props) => {
   const userDetails = (
     <UserDetails
       user={user}/>
+  )
+
+  const currentUser = (
+    <UserSearch currentUser={user} />
   )
   
   let editElement = <span><a className="edit-button" href={`/users/${user.id}/edit`}>Personalize Your Profile</a></span>

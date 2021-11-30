@@ -7,6 +7,13 @@ const UserSearch = (props) => {
   const [instruments, setInstruments] = useState([])
   const [selectedCheckboxes, setSelectedCheckboxes] = useState([])
   const [filteredResults, setFilteredResults] = useState([])
+  const [currentUser, setCurrentUser] = useState({})
+
+  useEffect(() => {
+    helperFetch(`/api/v1/users`).then(userData => {
+      setCurrentUser(userData.user)
+    })
+  }, [])
 
   useEffect(() => {
     helperFetch(`/api/v1/instruments`).then(instrumentsData => {
@@ -52,7 +59,7 @@ const UserSearch = (props) => {
     instruments.forEach((instrument) => {
       if (selectedCheckboxes.includes(instrument.musical_instrument)) {
         instrument.users.forEach((user) => {
-          if (!filteredUsers.includes(user.id)) {
+          if (user.id !== currentUser.id) {
             filteredUsers.push(user)
           }
         })
