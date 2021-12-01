@@ -1,33 +1,35 @@
-<h2 class="signup-header jammin">Log in</h2>
+<div class="home">
+  <h2 class="signup-header jammin">Log in</h2>
 
-<div class="grid-x align-center">
-  <div class="cell small-10 medium-8 large-6">
-    <div class="sign-up-form grid-x align-center">
-      <div class="cell small-10 large-8">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="field">
-            <%= f.label :email, class: "label" %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-          </div>
-
-          <div class="field">
-            <%= f.label :password, class: "label" %><br />
-            <%= f.password_field :password, autocomplete: "current-password" %>
-          </div>
-
-          <% if devise_mapping.rememberable? %>
+  <div class="grid-x align-center">
+    <div class="cell small-10 medium-8 large-6">
+      <div class="sign-up-form grid-x align-center">
+        <div class="cell small-10 large-8">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="field">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
+              <%= f.label :email, class: "label" %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password, class: "label" %><br />
+              <%= f.password_field :password, autocomplete: "current-password" %>
+            </div>
+
+            <% if devise_mapping.rememberable? %>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end %>
+
+            <div class="actions">
+              <%= f.submit "Log in", class: "signup-button" %>
+              <span class="forgot-password"><%= link_to "Sign up", new_registration_path(resource_name), class: "forgot-password" %></span>
             </div>
           <% end %>
-
-          <div class="actions">
-            <%= f.submit "Log in", class: "signup-button" %>
-            <span class="forgot-password"><%= link_to "Sign up", new_registration_path(resource_name), class: "forgot-password" %></span>
-          </div>
-        <% end %>
-        <span class="forgot-password"><%= link_to "Forgot your password?", new_password_path(resource_name), class: "forgot-password" %></span>
+          <span class="forgot-password"><%= link_to "Forgot your password?", new_password_path(resource_name), class: "forgot-password" %></span>
+        </div>
       </div>
     </div>
   </div>

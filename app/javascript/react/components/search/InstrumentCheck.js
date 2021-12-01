@@ -11,7 +11,7 @@ const InstrumentCheck = (props) => {
         name={instrument.musical_instrument}
         type="checkbox"
       />
-      {`${instrument.musical_instrument.toUpperCase()} `}
+      {`${instrument.musical_instrument} `}
     </label>
   )
 }

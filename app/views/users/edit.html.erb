@@ -18,7 +18,7 @@
           </div>
           <div>
             <%= f.label :instruments, "Instruments", class: "label"%>
-            <div class="grid-x">
+            <div class="grid-x instruments-div">
             <% Instrument.all.each do |instrument| %>
               <div class="cell small-3 large-3">
               <%= check_box_tag "user[instrument_ids][]", instrument.id, f.object.instruments.include?(instrument)%>

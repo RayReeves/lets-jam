@@ -2,6 +2,10 @@
   margin: 25px 50px;
 }
 
+.welcome-header {
+  text-align: center;
+}
+
 .profile-pic-div {
   display: flex;
   justify-content: center;
@@ -42,6 +46,10 @@
 .location {
   font-size: 2em;
   text-align: center;
+}
+
+.instruments-div {
+  margin-bottom: 20px;
 }
 
 .instruments-container {

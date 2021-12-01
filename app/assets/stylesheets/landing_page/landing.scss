@@ -1,19 +1,32 @@
+.home {
+  background-image: image-url('live-stage.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  min-height: 900px;
+  position: absolute;
+}
+
 .center-column {
   margin: 10px;
 }
 
 .landing-header {
   font-size: 5em;
+  text-align: center;
 }
 
 .introduction {
-  margin-bottom: 0px;;
+  margin-bottom: 0px;
+  text-align: center;
 }
 
 .landing-description {
-  background-color: rgb(213, 213, 213);
+  background-color: rgba(255, 255, 255,.8);
   border-radius: 10px;
   padding: 15px;
+  margin-bottom: 30px;
   font-family: 'Quattrocento Sans', sans-serif;
   font-size: 1.5em;
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2);
@@ -27,14 +40,15 @@
 
 .sign-up {
   margin-top: 10px;
-  font-size: 2em;
+  font-size: 1.7em;
   text-align: center;
+  font-weight: 100;
 }
 
 .register-button {
   padding: 10px;
-  background-color: rgb(255, 255, 255);
-  border: solid 3px rgb(106, 106, 215);
+  background-color: rgba(255, 255, 255, .8);
   border-radius: 25px;
   font-family: 'Quattrocento Sans', sans-serif;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2);
 }
