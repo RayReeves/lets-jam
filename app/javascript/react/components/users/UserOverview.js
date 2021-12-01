@@ -8,7 +8,9 @@ const UserOverview = (props) => {
   }
   return(
     <div>
-      <img className="user-profile-pic" src={image} alt="user profile pic"/>
+      <div className="profile-pic-div">
+        <img className="user-profile-pic" src={image} alt="user profile pic"/>
+      </div>
       <div className="user-info">
         <p className="name">{user.first_name} {user.last_name}<br/>
           <span className="username">( {`${user.username}`} )</span>

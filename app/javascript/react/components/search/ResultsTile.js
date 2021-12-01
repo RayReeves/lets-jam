@@ -10,10 +10,10 @@ const ResultsTile = (props) => {
   }
   
   return (
-    <div>
-      <img className="search-image" src={image} alt="user profile pic"/>
+    <div className="search-return">
       <Link to={`/users/${result.id}`} >
-        <p>{`${result.username} `}</p>
+        <img className="search-image" src={image} alt="user profile pic"/>
+        <p className="search-link">{`${result.username} `}</p>
       </Link>
     </div>
   )

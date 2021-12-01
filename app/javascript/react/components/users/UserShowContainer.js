@@ -25,9 +25,9 @@ const UserShowContainer = (props) => {
   )
 
   return (
-    <div className="grid-x grid-margin-x">
+    <div className="user-container-div">
       <div className=" cell small-10 large-10">
-        <div className="grid-x">
+        <div className="grid-x grid-margin-x">
           <div className="cell small-3 large-3 overview">
             {userOverview}
           </div>
@@ -36,7 +36,7 @@ const UserShowContainer = (props) => {
           </div>
           <div className="cell small-1 large-2">
             <div>
-              <Link to={"/search"}>
+              <Link to={"/search"} className="nav-text edit-button">
                 Return To Search
               </Link>
             </div>

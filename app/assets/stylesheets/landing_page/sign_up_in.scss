@@ -9,6 +9,7 @@
   padding: 15px;
   font-family: 'Quattrocento Sans', sans-serif;
   font-size: 1.5em;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2);
 }
 
 .label {
@@ -28,4 +29,8 @@
 
 .forgot-password {
   font-size: .8em;
+}
+
+.centered {
+  text-align: center;
 }

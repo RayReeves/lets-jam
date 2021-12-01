@@ -26,8 +26,8 @@ const UserIndex = (props) => {
   )
   
   return (
-    <div className="grid-x grid-margin-x">
-      <h1>Welcome {user.first_name}</h1>
+    <div className="user-container-div">
+      <h1 className="jammin">Welcome {user.first_name}</h1>
       <div className="cell small-10 large-10">
         <div className="grid-x grid-margin-x">
           <div className="cell small-3 large-4 overview">
@@ -37,9 +37,9 @@ const UserIndex = (props) => {
             {userDetails}
           </div>
           <div className="cell small-1 large-2">
-            <div><a className="edit-button" href={`/users/${user.id}/edit`}>Personalize Your Profile</a></div>
+            <div><a className="nav-text edit-button" href={`/users/${user.id}/edit`}>Personalize Your Profile</a></div>
             <div>
-              <Link to={"/search"}>
+              <Link to={"/search"} className="nav-text edit-button" >
                 Find Fellow Musicians
               </Link>
             </div>
