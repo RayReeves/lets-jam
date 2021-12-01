@@ -1,34 +1,38 @@
-<h1>Personalize Your Profile</h1>
+<h1 class="jammin centered">Personalize Your Profile</h1>
 <div class="grid-x align-center">
   <div class="cell small-10 large-8">
     <div class="grid-x align-center">
-      <div class="cell small-9 large-8">
+      <div class="cell small-9 large-8 sign-up-form">
         <%= form_for (@user) do |f| %>
           <div>
-            <%= f.label :username %>
+            <%= f.label :username, class: "label"%>
             <%= f.text_field :username %>
           </div>
           <div>
-            <%= f.label :first_name, "First Name" %>
+            <%= f.label :first_name, "First Name", class: "label" %>
             <%= f.text_field :first_name %>
           </div>
           <div>
-            <%= f.label :last_name, "Last Name" %>
+            <%= f.label :last_name, "Last Name", class: "label" %>
             <%= f.text_field :last_name %>
           </div>
           <div>
-            <%= f.label :instruments, "Instruments"%>
+            <%= f.label :instruments, "Instruments", class: "label"%>
+            <div class="grid-x">
             <% Instrument.all.each do |instrument| %>
+              <div class="cell small-3 large-3">
               <%= check_box_tag "user[instrument_ids][]", instrument.id, f.object.instruments.include?(instrument)%>
               <%= instrument.musical_instrument %>
+              </div>
             <% end %>
+            </div>
           </div>
           <div>
-            <%= f.label :bio, "Biography" %>
+            <%= f.label :bio, "Biography", class: "label" %>
             <%= f.text_area :bio %>
           </div>
           <div>
-            <%= f.label :zip_code, "Zip Code" %>
+            <%= f.label :zip_code, "Zip Code", class: "label" %>
             <%= f.text_field :zip_code %>
           </div>
           <div>

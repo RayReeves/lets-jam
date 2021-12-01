@@ -34,7 +34,7 @@ const UserSearch = (props) => {
 
   const instrumentCheckBoxes = instruments.map((instrument) => {
       return(
-        <div className="cell small-4 large-2 checkbox" key={instrument.id}>
+        <div className="cell small-6 medium-4 large-3 checkbox" key={instrument.id}>
           <InstrumentCheck 
             instrument={instrument}
             handleCheckboxChange={handleCheckboxChange} 
@@ -75,24 +75,29 @@ const UserSearch = (props) => {
   }
 
   return (
-    <div>
-      <div className="search grid-x align-center">
-        <div className="cell small-10 large-8"></div>
+    <div className="search-page">
+      <div className="grid-x align-center">
+        <div className="cell small-10 large-7">
+          <h3 className="jammin">Search By Instrument</h3>
           <form onSubmit={handleSubmit} >
-            <div className="searchInputs">
+            <div className="search-inputs">
               <div className="grid-x">
                 {instrumentCheckBoxes}
               </div>
             </div>
-            <input
-              className="search-button"
-              type="submit"
-            />
+            <p className="search-button">
+              <input
+                type="submit"
+                value="Search Users"
+                className="nav-text"
+              />
+            </p>
           </form>
         </div>
-        <div class="grid-x">
-          {resultsTiles}
-        </div>
+      </div>
+      <div className="grid-x align-center">
+        {resultsTiles}
+      </div>  
     </div>
   )
 }

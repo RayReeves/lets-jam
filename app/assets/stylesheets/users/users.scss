@@ -1,6 +1,57 @@
+.user-container-div {
+  margin: 25px 50px;
+}
+
+.profile-pic-div {
+  display: flex;
+  justify-content: center;
+}
+
 .user-profile-pic {
+  margin-bottom: 15px;
   object-fit: cover;
   width: 250px;
   height: 250px;
   border-radius: 25%;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2);
+}
+
+.user-info {
+  margin-bottom: 15px;
+  border: solid 1px black;
+  border-radius: 25px;
+  background-color: white;
+  padding: 10px 20px 0px 20px;
+  font-family: 'Quattrocento Sans', sans-serif;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2)
+}
+
+.name {
+  font-size: 2em;
+  text-align: center;
+}
+
+.username {
+  font-size: .75em;
+}
+
+.locale {
+  font-size: 1.5em;
+}
+
+.location {
+  font-size: 2em;
+  text-align: center;
+}
+
+.instruments-container {
+  font-size: 2em;
+}
+
+.musical_instruments {
+  text-align: center;
+}
+
+.bio {
+  font-size: 1.5em;
 }

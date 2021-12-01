@@ -8,11 +8,13 @@ const ResultsTile = (props) => {
   if (result.profile_photo) {
     image = result.profile_photo.url
   }
-
+  
   return (
-    <div>
-      <img className="search-image" src={image} alt="user profile pic"/>
-      <p>{`${result.username} `}</p>
+    <div className="search-return">
+      <Link to={`/users/${result.id}`} >
+        <img className="search-image" src={image} alt="user profile pic"/>
+        <p className="search-link">{`${result.username} `}</p>
+      </Link>
     </div>
   )
 }
