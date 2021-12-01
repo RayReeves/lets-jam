@@ -25,24 +25,24 @@ const UserIndex = (props) => {
       user={user}/>
   )
   
-  let editElement = <span><a className="edit-button" href={`/users/${user.id}/edit`}>Personalize Your Profile</a></span>
-  
   return (
-    <div>
+    <div className="grid-x grid-margin-x">
       <h1>Welcome {user.first_name}</h1>
-      <div className="grid-x ">
-        <div className="cell small-3 large-3 overview">
-          {userOverview}
-        </div>
-        <div className="cell small-8 large-7 details">
-          {userDetails}
-        </div>
-        <div className="cell small-1 large-2">
-          <div><a className="edit-button" href={`/users/${user.id}/edit`}>Personalize Your Profile</a></div>
-          <div>
-            <Link to={"/search"}>
-              Find Fellow Musicians
-            </Link>
+      <div className="cell small-10 large-10">
+        <div className="grid-x grid-margin-x">
+          <div className="cell small-3 large-4 overview">
+            {userOverview}
+          </div>
+          <div className="cell small-8 large-6 details">
+            {userDetails}
+          </div>
+          <div className="cell small-1 large-2">
+            <div><a className="edit-button" href={`/users/${user.id}/edit`}>Personalize Your Profile</a></div>
+            <div>
+              <Link to={"/search"}>
+                Find Fellow Musicians
+              </Link>
+            </div>
           </div>
         </div>
       </div>

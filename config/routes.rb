@@ -6,11 +6,12 @@ Rails.application.routes.draw do
 
   get '/users' =>"users#index", :as => :user_root
   get '/search' =>"users#index"
+  get '/users/:username' =>"users#index"
     
   namespace :api do
     namespace :v1 do
       resources :instruments, only: [:index]
-      resources :users, only: [:index, :show, :update]
+      resources :users, only: [:index, :show]
     end
   end 
 

@@ -4,3 +4,41 @@
   height: 250px;
   border-radius: 25%;
 }
+
+.user-info {
+  border: solid 1px black;
+  border-radius: 25px;
+  background-color: white;
+  padding: 20px;
+  font-family: 'Quattrocento Sans', sans-serif;
+}
+
+.name {
+  font-size: 2em;
+  text-align: center;
+}
+
+.username {
+  font-size: .75em;
+}
+
+.locale {
+  font-size: 1.5em;
+}
+
+.location {
+  font-size: 2em;
+  text-align: center;
+}
+
+.instruments-container {
+  font-size: 2em;
+}
+
+.musical_instruments {
+  text-align: center;
+}
+
+.bio {
+  font-size: 1.5em;
+}

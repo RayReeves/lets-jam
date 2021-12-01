@@ -10,10 +10,18 @@ const UserDetails = (props) => {
     })
   }
 
+  let bio
+  if (user.bio !== "") {
+    bio = <div className="user-info"><p className="bio">{user.bio}</p></div>
+  }
+
   return (
     <div>
-      <p>{instruments}</p>
-      <p>{user.bio}</p>
+      <div className="instruments-container user-info">
+        <p>Instruments:</p>
+        <p className="musical_instruments">{instruments}</p>
+      </div>
+      {bio}
     </div>
   )
 }
