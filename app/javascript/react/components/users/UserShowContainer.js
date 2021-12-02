@@ -39,6 +39,9 @@ const UserShowContainer = (props) => {
               <Link to={"/search"} className="nav-text edit-button">
                 Return To Search
               </Link>
+              <Link to={"/chats"} className="nav-text edit-button">
+                Let's Jam!
+              </Link>
             </div>
           </div>
         </div>
