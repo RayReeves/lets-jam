@@ -8,6 +8,7 @@
 Instrument.all.delete_all
 
 User.create(email: "admin@lets-jam.com", password: "adminPasswordHere", username: "Justin", first_name: "Justin", last_name: "Reeves", zip_code: "02155")
+User.create(email: "default@lets-jam.com", password: "thisIStheDEFAULTaccountPASSWORDarigatou", username: "Default", first_name: "Default", last_name: "Account", zip_code: "02111")
 
 Instrument.create(musical_instrument: "voice")
 Instrument.create(musical_instrument: "guitar")
