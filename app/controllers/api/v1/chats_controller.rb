@@ -1,8 +1,7 @@
 class Api::V1::ChatsController < ApplicationController
   
   def show
-    @chat = Chat.find(params[:id])
-    render json: @chat
+    render json: Chat.find(params[:id])
   end
 
   def create
