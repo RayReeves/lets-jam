@@ -8,6 +8,9 @@ class User < ApplicationRecord
 
   has_many :skills
   has_many :instruments, through: :skills
+  has_many :messages
+  has_many :user_chats
+  has_many :chats, through: :user_chats
 
   mount_uploader :profile_photo, ProfilePhotoUploader
   

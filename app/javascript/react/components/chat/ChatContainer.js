@@ -7,7 +7,7 @@ const ChatContainer = (props) => {
   const [user, setUser] = useState({})
   const [messages, setMessages] = useState([])
   const [message, setMessage] = useState("")
-
+  
   useEffect(() => {
     helperFetch(`/api/v1/users`).then(userData => {
       setUser(userData.user)
@@ -16,7 +16,7 @@ const ChatContainer = (props) => {
   App.ChatChannel = App.cable.subscriptions.create(
     {
       channel: "ChatChannel",
-      chat_id: 1
+      chat_id: user.id
     },
     {
       connected: () => console.log("ChatChannel connected"),

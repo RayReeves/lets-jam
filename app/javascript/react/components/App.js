@@ -13,6 +13,7 @@ export const App = (props) => {
         <Route exact path="/search" component={UserSearch} />
         <Route exact path="/users/:id" component={UserShowContainer} />
         <Route exact path="/chats" component={ChatContainer} />
+        <Route exact path="/chats/:id" component={ChatContainer} />
       </Switch>
     </BrowserRouter>
   )
