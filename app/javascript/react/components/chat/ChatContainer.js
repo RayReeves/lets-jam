@@ -4,14 +4,18 @@ import Message from "./Message";
 import TextFieldWithSubmit from "./TextFieldWithSubmit";
 
 const ChatContainer = (props) => {
-  const chatId = props.match.params.id
+  const chatId = props.openChat
   const [user, setUser] = useState({})
   const [messages, setMessages] = useState([])
   const [message, setMessage] = useState("")
+  const [chat, setChat] = useState({})
   
   useEffect(() => {
     helperFetch(`/api/v1/users`).then(userData => {
       setUser(userData.user)
+    }),
+    helperFetch(`/api/v1/chats/${chatId}`).then(chatData => {
+      setChat(chatData.chat)
     })
   },
   App.ChatChannel = App.cable.subscriptions.create(
@@ -29,6 +33,10 @@ const ChatContainer = (props) => {
     }
   ), [])
 
+  if (chat) { 
+    console.log(chat.messages)
+  }
+  
   const handleMessageReceipt = (message) => {
     setMessages([...messages, message])
   }

@@ -58,8 +58,8 @@ const UserShowContainer = (props) => {
 
   const letsJam =(
     <StartChatButton 
-      currentUser={currentUser.id}
-      receivingUser={user.id}
+      currentUser={currentUser}
+      receivingUser={user}
       createNewChat={createNewChat}
     />
   )

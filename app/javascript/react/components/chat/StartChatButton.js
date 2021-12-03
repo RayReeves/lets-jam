@@ -3,9 +3,9 @@ const StartChatButton = (props) => {
 
   const handleClick = () => {
     let body = {
-      title: props.receivingUser.username,
-      sender_id: props.currentUser,
-      receiver_id: props.receivingUser
+      title: `${props.currentUser.username} with ${props.receivingUser.username}`,
+      sender_id: props.currentUser.id,
+      receiver_id: props.receivingUser.id
     }
     props.createNewChat(body)
   }

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :instruments, only: [:index]
       resources :users, only: [:index, :show]
-      resources :chats, only: [:create]
+      resources :chats, only: [:show, :create]
     end
   end 
 

@@ -5,12 +5,17 @@ import helperFetch from "../helpers/Fetcher";
 
 const ChatIndex = (props) => {
   const [user, setUser] = useState({})
+  const [openChat, setOpenChat] = useState(null)
 
   useEffect(() => {
     helperFetch(`/api/v1/users`).then(userData => {
       setUser(userData.user)
     })
   }, [])
+
+  let currentChat = (chatId) => {
+    setOpenChat(chatId)
+  }
   
   let chatTiles
   if (user.chats) {
@@ -18,6 +23,7 @@ const ChatIndex = (props) => {
         return(
           <div key={chat.id}>
             <ChatTiles
+              currentChat={currentChat}
               chat={chat}
             />
           </div>
@@ -26,9 +32,23 @@ const ChatIndex = (props) => {
     )
   }
 
+  
+  let chatContainer
+  if (openChat !== null){
+    chatContainer = 
+      <ChatContainer 
+        openChat={openChat}
+      />
+  }
+
   return(
-    <div>
-      {chatTiles}
+    <div className="grid-x">
+      <div className="cell small-6 large-6">
+        {chatTiles}
+      </div>
+      <div className="cell small-6 large-6">
+        {chatContainer}
+      </div>
     </div>
   )
 
