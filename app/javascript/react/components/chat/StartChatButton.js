@@ -1,10 +1,9 @@
 import React from "react";
-import { Redirect } from "react-router";
 const StartChatButton = (props) => {
 
   const handleClick = () => {
     let body = {
-      title: "PRIVATE",
+      title: props.receivingUser.username,
       sender_id: props.currentUser,
       receiver_id: props.receivingUser
     }
