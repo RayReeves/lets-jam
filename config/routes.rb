@@ -6,12 +6,15 @@ Rails.application.routes.draw do
 
   get '/users' =>"users#index", :as => :user_root
   get '/search' =>"users#index"
+  get '/chats' =>"users#index"
+  get '/chats/:id' =>"users#index"
   get '/users/:username' =>"users#index"
     
   namespace :api do
     namespace :v1 do
       resources :instruments, only: [:index]
       resources :users, only: [:index, :show]
+      resources :chats, only: [:show, :create]
     end
   end 
 
