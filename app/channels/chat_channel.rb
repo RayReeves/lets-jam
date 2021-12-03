@@ -9,6 +9,7 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def receive(data)
+
     puts data
   
     chat = Chat.find_or_create_by(id: params[:chat_id])
