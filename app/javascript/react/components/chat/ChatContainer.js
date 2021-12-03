@@ -15,7 +15,8 @@ const ChatContainer = (props) => {
       setUser(userData.user)
     }),
     helperFetch(`/api/v1/chats/${chatId}`).then(chatData => {
-      setChat(chatData)
+      debugger
+      setChat(chatData.chat)
     })
   },
   App.ChatChannel = App.cable.subscriptions.create(
