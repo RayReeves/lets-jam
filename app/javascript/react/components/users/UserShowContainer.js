@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router";
 import helperFetch from "../helpers/Fetcher";
 import UserDetails from "./UserDetails";
 import UserOverview from "./UserOverview";
@@ -10,6 +11,8 @@ const UserShowContainer = (props) => {
   const [currentUser, setCurrentUser] = useState({})
   const [user, setUser] = useState({})
   const [chat, setChat] = useState({})
+  const [shouldRedirect, setShouldRedirect] = useState(false) 
+  
   useEffect(() => {
     helperFetch(`/api/v1/users/${userId}`).then(userData => {
       setUser(userData.user)
@@ -20,7 +23,6 @@ const UserShowContainer = (props) => {
   }, [])
 
   const createNewChat = async (formPayload) => {
-    debugger
     try {
       const response = await fetch("/api/v1/chats", {
         credentials: "same-origin",
@@ -37,6 +39,7 @@ const UserShowContainer = (props) => {
       }
       const newChat = await response.json()
       setChat(newChat)
+      setShouldRedirect(true)
     } catch(err) {
       console.log(err)
     }
@@ -60,6 +63,10 @@ const UserShowContainer = (props) => {
       createNewChat={createNewChat}
     />
   )
+
+  if (shouldRedirect) {
+    return <Redirect to={`/chats/${chat.id}`} />
+  }
 
   return (
     <div className="user-container-div">

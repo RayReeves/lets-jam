@@ -11,7 +11,6 @@ class Api::V1::ChatsController < ApplicationController
       ownership2.chat_id = chat.id
       ownership2.user_id = params["receiver_id"]
       ownership2.save
-      binding.pry
 
       render json: chat
     end

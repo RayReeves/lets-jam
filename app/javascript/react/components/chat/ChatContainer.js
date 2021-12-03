@@ -4,6 +4,7 @@ import Message from "./Message";
 import TextFieldWithSubmit from "./TextFieldWithSubmit";
 
 const ChatContainer = (props) => {
+  const chatId = props.match.params.id
   const [user, setUser] = useState({})
   const [messages, setMessages] = useState([])
   const [message, setMessage] = useState("")
@@ -16,7 +17,7 @@ const ChatContainer = (props) => {
   App.ChatChannel = App.cable.subscriptions.create(
     {
       channel: "ChatChannel",
-      chat_id: user.id
+      chat_id: chatId
     },
     {
       connected: () => console.log("ChatChannel connected"),
