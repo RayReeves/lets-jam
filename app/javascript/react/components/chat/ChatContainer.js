@@ -8,16 +8,13 @@ import TextFieldWithSubmit from "./TextFieldWithSubmit";
 const ChatContainer = (props) => {
   const chatId = props.openChat
   const [user, setUser] = useState({})
-  const [persistedMessages, setPersistedMessages] = useState([])
   const [messages, setMessages] = useState([])
   const [message, setMessage] = useState("")
   
   useEffect(() => {
     helperFetch(`/api/v1/users`).then(userData => {
       setUser(userData.user)
-    }),
-    helperFetch(`/api/v1/messages/${chatId}`).then(messageData => {
-      setPersistedMessages(messageData.messages)
+      setMessages(props.persistedMessages)
     })
   },
   App.ChatChannel = App.cable.subscriptions.create(
@@ -35,11 +32,6 @@ const ChatContainer = (props) => {
     }
   ), [])
 
-  // const pushPersistedMessage = persistedMessages.forEach((persistedMessage) => {
-  //   let message = {messageId: persistedMessage.id, message: persistedMessage.body, user: persistedMessage.user}
-  //   setMessages([...messages, message])
-  // })
-  
   const handleMessageReceipt = (message) => {
     setMessages([...messages, message])
   }
@@ -64,14 +56,12 @@ const ChatContainer = (props) => {
   const messagesComponents = messages.map((message) => {
     return(
       <Message
-        key={message.messageId}
+        key={message.Id}
         handle={message.user.username}
-        message={message.message}
+        message={message.body}
       />
     )
   })
-
-  
 
   return (
     <div>

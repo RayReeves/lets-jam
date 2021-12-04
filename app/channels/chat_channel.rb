@@ -20,8 +20,8 @@ class ChatChannel < ApplicationCable::Channel
 
     chat_json = {
       "chat_key": chat_key,
-      "message": new_message.body,
-      "messageId": new_message.id,
+      "body": new_message.body,
+      "id": new_message.id,
       "user": data["user"]
     }
 
