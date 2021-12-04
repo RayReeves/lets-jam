@@ -1,3 +1,5 @@
+import { Binding } from "@babel/traverse";
+import { continueStatement } from "@babel/types";
 import React, { useState, useEffect} from "react";
 import helperFetch from "../helpers/Fetcher";
 import Message from "./Message";
@@ -8,15 +10,11 @@ const ChatContainer = (props) => {
   const [user, setUser] = useState({})
   const [messages, setMessages] = useState([])
   const [message, setMessage] = useState("")
-  const [chat, setChat] = useState({})
   
   useEffect(() => {
     helperFetch(`/api/v1/users`).then(userData => {
       setUser(userData.user)
-    }),
-    helperFetch(`/api/v1/chats/${chatId}`).then(chatData => {
-      debugger
-      setChat(chatData.chat)
+      setMessages(props.persistedMessages)
     })
   },
   App.ChatChannel = App.cable.subscriptions.create(
@@ -34,11 +32,6 @@ const ChatContainer = (props) => {
     }
   ), [])
 
-  if (chat.id) { 
-    debugger
-    console.log(chat.messages)
-  }
-  
   const handleMessageReceipt = (message) => {
     setMessages([...messages, message])
   }
@@ -59,13 +52,13 @@ const ChatContainer = (props) => {
   const handleMessageChange = (event) => {
     setMessage(event.target.value)
   }
-
-  let messagesComponents = messages.map((message) => {
+  
+  const messagesComponents = messages.map((message) => {
     return(
       <Message
-        key={message.messageId}
+        key={message.Id}
         handle={message.user.username}
-        message={message.message}
+        message={message.body}
       />
     )
   })

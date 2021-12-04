@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       resources :instruments, only: [:index]
       resources :users, only: [:index, :show]
       resources :chats, only: [:show, :create]
+      resources :messages, only: [:show]
     end
   end 
 

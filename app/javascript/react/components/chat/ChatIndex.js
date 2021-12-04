@@ -6,6 +6,7 @@ import helperFetch from "../helpers/Fetcher";
 const ChatIndex = (props) => {
   const [user, setUser] = useState({})
   const [openChat, setOpenChat] = useState(null)
+  const [persistedMessages, setPersistedMessages] = useState([])
 
   useEffect(() => {
     helperFetch(`/api/v1/users`).then(userData => {
@@ -13,8 +14,15 @@ const ChatIndex = (props) => {
     })
   }, [])
 
-  let currentChat = (chatId) => {
-    setOpenChat(chatId)
+  let persistMessages = (chatId) => {
+    helperFetch(`/api/v1/messages/${chatId}`).then(messageData => {
+      setPersistedMessages(messageData.messages)
+      if (openChat === null) {
+        setOpenChat(chatId)
+      } else {
+        setOpenChat(null)
+      }
+    })
   }
   
   let chatTiles
@@ -23,7 +31,7 @@ const ChatIndex = (props) => {
         return(
           <div key={chat.id}>
             <ChatTiles
-              currentChat={currentChat}
+              persistMessages={persistMessages}
               chat={chat}
             />
           </div>
@@ -36,7 +44,8 @@ const ChatIndex = (props) => {
   let chatContainer
   if (openChat !== null){
     chatContainer = 
-      <ChatContainer 
+      <ChatContainer
+        persistedMessages={persistedMessages}
         openChat={openChat}
       />
   }
