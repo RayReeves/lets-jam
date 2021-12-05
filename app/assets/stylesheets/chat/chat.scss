@@ -1,0 +1,57 @@
+.chat-button {
+  font-family: 'Permanent Marker', sans-serif;
+  font-size: 1.5em;
+  padding: 10px;
+  margin: 5px;
+}
+
+.chat-button:hover {
+  background-color: rgba(245, 244, 244, .3);
+}
+
+.selected-chat {
+  background-color: rgba(245, 244, 244, .8);
+  padding: 20px 10px;
+  border: solid black 1px;
+}
+
+.chat-handle {
+  font-family: 'Permanent Marker', sans-serif;
+}
+
+.chat-message {
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-size: 1.2em;
+  padding: 5px;
+}
+
+.dm {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.message-div {
+  margin-bottom: 15px;
+}
+
+.chat-avatar {
+  border-radius: 25%;
+  height: 2.5em;
+  width: 2.5em;
+}
+
+.chat-tiles {
+  margin-top: 20px;
+}
+
+.chat-box {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+#chat-window {
+  height: 70vh;
+  border: solid black 1px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
