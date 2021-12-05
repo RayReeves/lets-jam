@@ -11,6 +11,9 @@ const ChatIndex = (props) => {
   useEffect(() => {
     helperFetch(`/api/v1/users`).then(userData => {
       setUser(userData.user)
+      if (props.location.chat) {
+        setOpenChat(props.location.chat)
+      }
     })
   }, [])
 

@@ -38,7 +38,7 @@ const UserShowContainer = (props) => {
         throw(new Error(errorMessage))
       }
       const newChat = await response.json()
-      setChat(newChat)
+      setChat(newChat.chat)
       setShouldRedirect(true)
     } catch(err) {
       console.log(err)
@@ -65,7 +65,10 @@ const UserShowContainer = (props) => {
   )
 
   if (shouldRedirect) {
-    return <Redirect to={`/chats/${chat.id}`} />
+    return <Redirect to={{
+              pathname: `/chats`,
+              chat: chat.id
+         }} />
   }
 
   return (

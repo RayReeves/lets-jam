@@ -3,7 +3,7 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   def default_url(*args)
-    "https://lets-jam-together-production.s3.amazonaws.com/uploads/user/profile_photo/2/blank-profile-picture.png"
+    "https://lets-jam-together-production.s3.amazonaws.com/uploads/user/blank-profile-picture.png"
   end
   # Choose what kind of storage to use for this uploader:
   if Rails.env.test?
