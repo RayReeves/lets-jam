@@ -57,6 +57,7 @@ const ChatContainer = (props) => {
     return(
       <Message
         key={message.Id}
+        avatar={message.user.profile_photo}
         handle={message.user.username}
         message={message.body}
       />
@@ -64,7 +65,7 @@ const ChatContainer = (props) => {
   })
 
   return (
-    <div>
+    <div className="chat-box">
       <div className='callout chat' id='chat-window'>
         {messagesComponents}
       </div>

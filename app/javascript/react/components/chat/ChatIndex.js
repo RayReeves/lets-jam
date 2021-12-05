@@ -20,14 +20,11 @@ const ChatIndex = (props) => {
   let persistMessages = (chatId) => {
     helperFetch(`/api/v1/messages/${chatId}`).then(messageData => {
       setPersistedMessages(messageData.messages)
-      if (openChat === null) {
-        setOpenChat(chatId)
-      } else {
-        setOpenChat(null)
-      }
+      setOpenChat(null)
+      setOpenChat(chatId)
     })
   }
-  
+
   let chatTiles
   if (user.chats) {
     chatTiles = user.chats.map((chat) => {
@@ -35,6 +32,7 @@ const ChatIndex = (props) => {
           <div key={chat.id}>
             <ChatTiles
               persistMessages={persistMessages}
+              openChat={openChat}
               chat={chat}
             />
           </div>
@@ -54,11 +52,11 @@ const ChatIndex = (props) => {
   }
 
   return(
-    <div className="grid-x">
-      <div className="cell small-6 large-6">
+    <div className="grid-x align-center">
+      <div className="cell small-5 large-5 chat-tiles">
         {chatTiles}
       </div>
-      <div className="cell small-6 large-6">
+      <div className="cell small-6 large-6 chat-box">
         {chatContainer}
       </div>
     </div>
