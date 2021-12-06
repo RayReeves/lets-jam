@@ -26,7 +26,6 @@ const ChatContainer = (props) => {
       connected: () => console.log("ChatChannel connected"),
       disconnected: () => console.log("ChatChannel disconnected"),
       received: data => {
-        console.log(data)
         handleMessageReceipt(data)
       }
     }
