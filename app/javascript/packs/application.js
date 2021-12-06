@@ -21,3 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 })
+
+let hideNotice = () => {
+  setInterval(function() {
+    document.querySelector('.flash-messages').style.display = "none";
+  }, 5000);
+}
+
+hideNotice();

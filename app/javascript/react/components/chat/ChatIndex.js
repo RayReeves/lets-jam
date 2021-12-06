@@ -39,11 +39,7 @@ const ChatIndex = (props) => {
               chat={chat}
             />
           </div>
-        )
-      }
-    )
-  }
-
+    )})}
   
   let chatContainer
   if (openChat !== null){
