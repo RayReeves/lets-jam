@@ -10,8 +10,9 @@ https://lets-jam-together.herokuapp.com/
 
 To test functions such as the profile editing, search, and messaging functions, a user can log in using two pre-set default users. The user details are as follows:
 
-Default1 email: default1@lets-jam.com password: Password
-Default2 email: default2@lets-jam.com password: Password
+Default1 - email: default1@lets-jam.com / password: Password
+
+Default2 - email: default2@lets-jam.com / password: Password
 
 From the user home page, a user can search for other users by checking boxes of instruments they would like to search for and clicking "Search User". From there a collection of users that match the criteria will appear, which are links to that user's personal profile page.
 Once on a user's profile page, on the right-hand side is a button "Let's Jam!" Selecting that will open a direct-message chat with this user, which can be accessed later by both users upon log in through the "Inbox" button in the navigation bar.
