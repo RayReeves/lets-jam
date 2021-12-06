@@ -7,12 +7,15 @@ const ChatIndex = (props) => {
   const [user, setUser] = useState({})
   const [openChat, setOpenChat] = useState(null)
   const [persistedMessages, setPersistedMessages] = useState([])
-
+  
   useEffect(() => {
     helperFetch(`/api/v1/users`).then(userData => {
       setUser(userData.user)
       if (props.location.chat) {
-        setOpenChat(props.location.chat)
+        helperFetch(`/api/v1/messages/${props.location.chat}`).then(messageData => {
+          setPersistedMessages(messageData.messages)
+          setOpenChat(props.location.chat)
+        })
       }
     })
   }, [])
