@@ -57,6 +57,7 @@ const ChatContainer = (props) => {
     return(
       <Message
         key={message.Id}
+        user={message.user}
         avatar={message.user.profile_photo}
         handle={message.user.username}
         message={message.body}
