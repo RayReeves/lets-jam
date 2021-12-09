@@ -8,6 +8,10 @@ a {
   color: black;
 }
 
+a:hover {
+  color: black
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -44,7 +48,7 @@ html {
 }
 
 .nav-text:hover {
-  background-color: rgba(245, 244, 244, .3);
+  background-color: rgba(109, 169, 201, .5);
 }
 
 .edit-button {
@@ -54,5 +58,5 @@ html {
 }
 
 .edit-button:hover {
-  background-color: rgba(245, 244, 244, .3);
+  background-color: rgba(255, 255, 255, 0.3);
 }

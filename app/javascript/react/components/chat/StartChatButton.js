@@ -11,7 +11,7 @@ const StartChatButton = (props) => {
   }
 
   return (
-    <button className="nav-text" onClick={handleClick}>Let's Jam!</button>
+    <button className="nav-text edit-button" onClick={handleClick}>Let's Jam!</button>
   )
 
 }

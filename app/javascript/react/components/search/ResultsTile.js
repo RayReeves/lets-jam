@@ -14,7 +14,6 @@ const ResultsTile = (props) => {
 
   let userInstruments
   if (user.instruments) {
-    debugger
     userInstruments = user.instruments.map((instrument) => {
       return(
       <span className="result-paragraph">{instrument.musical_instrument} | </span>
