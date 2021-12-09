@@ -58,7 +58,6 @@ const UserShowContainer = (props) => {
 
   let letsJam
   if (userId != currentUser.id) {
-    debugger
     letsJam =(
       <StartChatButton 
         currentUser={currentUser}
