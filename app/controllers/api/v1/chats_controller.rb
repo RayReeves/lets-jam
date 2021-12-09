@@ -8,6 +8,9 @@ class Api::V1::ChatsController < ApplicationController
     if Chat.find_by(title: params[:title])
       chat = Chat.find_by(title: params[:title])
       render json: chat
+    elsif Chat.find_by(title: params[:reverse_title])
+      chat = Chat.find_by(title: params[:reverse_title])
+      render json: chat
     else
       chat = Chat.new(chat_params)
       if chat.save
@@ -28,6 +31,6 @@ class Api::V1::ChatsController < ApplicationController
   private
 
   def chat_params
-    params[:chat].permit(:title, :sender_id, :receiver_id)
+    params[:chat].permit(:title, :reverse_title, :sender_id, :receiver_id)
   end
 end
