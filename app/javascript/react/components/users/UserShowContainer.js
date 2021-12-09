@@ -56,13 +56,17 @@ const UserShowContainer = (props) => {
       user={user}/>
   )
 
-  const letsJam =(
-    <StartChatButton 
-      currentUser={currentUser}
-      receivingUser={user}
-      createNewChat={createNewChat}
-    />
-  )
+  let letsJam
+  if (userId != currentUser.id) {
+    debugger
+    letsJam =(
+      <StartChatButton 
+        currentUser={currentUser}
+        receivingUser={user}
+        createNewChat={createNewChat}
+      />
+    )
+  }
 
   if (shouldRedirect) {
     return <Redirect to={{
